@@ -25,13 +25,13 @@ def build_report(char_count):
   for let in letters:
     print(f"The '{let["letter"]}' character was found {let["num"]} times")
 
-def main():
-  with open('./books/frankenstein.txt') as f:
+def main(book):
+  with open(f'./books/{book}') as f:
     story = f.read()
-    print("--- Begin report of books/frankenstein.txt ---")
+    print(f"--- Begin report of books/{book} ---")
     print(f"{get_word_count(story)} words found in the document")
     print()
     build_report(count_characters(story))
     print("--- End report ---")
 
-main()
+main('frankenstein.txt')
